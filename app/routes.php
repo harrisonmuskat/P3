@@ -16,16 +16,16 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-
+use Badcow\LoremIpsum\Generator;
 
 Route::get('/lipsum', function()
 {
-	return "This is the Lorem Ipsum page";
+	return View::make('lipsum');
 });
 
 Route::post('/lipsum', function()
 {
-	return "This is the l.i. generator page";
+	return View::make('lipsum');
 });
 
 

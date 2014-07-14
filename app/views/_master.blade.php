@@ -14,9 +14,9 @@
 
 <body class = "container-fluid">
 
-
-
-
+	<div class = "row">
+		<h1 class = "text-center"> Developer's Best Friend </h1>
+	</div>
 
 	@yield("content")
 
