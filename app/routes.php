@@ -29,15 +29,14 @@ Route::post('/lipsum', function()
 });
 
 
-
 Route::get('/ruser', function()
 {
-	return "This is the user page";
+	return View::make('ruser');
 });
 
 Route::post('/ruser', function()
 {
-	return "This is the user gen. page";
+	return View::make('ruser');
 });
 
 
