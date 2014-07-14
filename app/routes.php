@@ -13,5 +13,41 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
+});
+
+
+
+Route::get('/lipsum', function()
+{
+	return "This is the Lorem Ipsum page";
+});
+
+Route::post('/lipsum', function()
+{
+	return "This is the l.i. generator page";
+});
+
+
+
+Route::get('/ruser', function()
+{
+	return "This is the user page";
+});
+
+Route::post('/ruser', function()
+{
+	return "This is the user gen. page";
+});
+
+
+
+Route::get('/pwd', function()
+{
+	return "This is the pwd page";
+});
+
+Route::post('/pwd', function()
+{
+	return "This is the pwd gen page";
 });
