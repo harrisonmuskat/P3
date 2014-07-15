@@ -15,10 +15,43 @@
 <body class = "container-fluid">
 
 	<div class = "row">
-		<h1 class = "text-center"> Developer's Best Friend </h1>
+		<div class = "col-md-10">
+			<h3> Developer's Best Friend <br><small>Use these tools to generate filler text, fake users, and passwords for all manner of applications in web design and development</small></h3>
+		</div>
 	</div>
 
-	@yield("content")
+	<div class = "row">
+		<div class = "col-md-4">
+			<h4> Lorem Ipsum Generator </h4>
+			<form class = "form-horizontal" role = "form" method = "POST" action = "lipsum">
+				<div class = "form-group">
+					<label for = "paragraphs" class = "col-md-5"> Enter a number of paragraphs: </label>
+						<div class = "col-md-3">
+							<input class = "form-control" type = "text" id = "paragraphs" name = "paragraphs" maxlength = 1 value = ''>
+						</div>
+				</div>
+				<button type = "submit" class = "btn btn-default"> Get some text! </button>
+			</form>
+
+			<h4> Random User Generator </h4>
+			<form class = "form-horizontal" role = "form" method = "POST" action = "ruser">
+				<div class = "form-group">
+					<label for = "users" class = "col-md-5"> Enter a number of users: </label>
+						<div class = "col-md-3">
+							<input class = "form-control" type = "text" id = "users" name = "users" maxlength = 1 value = ''>
+						</div>
+				</div>
+				<button type = "submit" class = "btn btn-default"> Get some users! </button>
+			</form>
+		</div>
+
+		@yield("content")
+	</div>
+
+	<div class = "row">
+		@yield("user")
+	</div>
+	
 
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type = "text/javascript"></script>
 	<script src = "js/bootstrap.min.js"></script>

@@ -20,23 +20,66 @@ use Badcow\LoremIpsum\Generator;
 
 Route::get('/lipsum', function()
 {
-	return View::make('lipsum');
+	$generator = new Badcow\LoremIpsum\Generator();
+	$lipsum = '';
+
+	$paragraphs = $generator->getParagraphs(5);
+	for ($i = 0; $i < count($paragraphs); $i++) {
+		$lipsum .= '<p class = "small">'.$paragraphs[$i].'</p>';
+	}
+
+	return View::make('lipsum')->with('lipsum', $lipsum);
 });
 
 Route::post('/lipsum', function()
 {
-	return View::make('lipsum');
+	$generator = new Badcow\LoremIpsum\Generator();
+	$lipsum = '';
+
+	if(empty($_POST["paragraphs"])){
+		$paragraphs = $generator->getParagraphs(5);
+    	for ($i = 0; $i < count($paragraphs); $i++) {
+    		$lipsum .= '<p class = "small">'.$paragraphs[$i].'</p>';
+    	}
+	}
+	else {
+		$paragraphs = $generator->getParagraphs($_POST["paragraphs"]);
+		for ($i = 0; $i < count($paragraphs); $i++) {
+    		$lipsum .= '<p class = "small">'.$paragraphs[$i].'</p>';
+    	}
+	}
+	return View::make('lipsum')->with('lipsum', $lipsum);
 });
 
 
 Route::get('/ruser', function()
 {
-	return View::make('ruser');
+	$faker = Faker\Factory::create();
+	$names = '';
+
+	for ($i = 0; $i < 5; $i++) {
+		$names .= $faker->name . '<br>';
+	}
+
+	return View::make('ruser')->with('names', $names);
 });
 
 Route::post('/ruser', function()
 {
-	return View::make('ruser');
+	$faker = Faker\Factory::create();
+	$names = '';
+				    
+    if(empty($_POST["users"])){
+		for ($i = 0; $i < 5; $i++) {
+			$names .= $faker->name . '<br>';
+		}
+	}
+	else {
+		for ($i = 0; $i < $_POST["users"]; $i++) { 
+			$names .= $faker->name . '<br>';
+		}
+	}
+	return View::make('ruser')->with('names', $names);
 });
 
 
