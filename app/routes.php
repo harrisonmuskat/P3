@@ -74,8 +74,23 @@ Route::post('/ruser', function()
 			$names .= $faker->name . '<br>';
 		}
 	}
-	else {
+	elseif(isset($_POST["birth"]) && isset($_POST["address"])) {
 		for ($i = 0; $i < $_POST["users"]; $i++) { 
+			$names .= '<p>' . $faker->name . '<br>' . $faker->date . '<br>' . $faker->address . '</p>';
+		}
+	}
+	elseif(!isset($_POST["birth"]) && isset($_POST["address"])) {
+		for ($i = 0; $i < $_POST["users"]; $i++) { 
+			$names .= '<p>' . $faker->name . '<br>' . $faker->address . '</p>';
+		}
+	}
+	elseif(isset($_POST["birth"]) && !isset($_POST["address"])) {
+		for ($i = 0; $i < $_POST["users"]; $i++) { 
+			$names .= '<p>' . $faker->name . '<br>' . $faker->date . '</p>';
+		}
+	}
+	else{
+		for ($i = 0; $i < $_POST["users"]; $i++) {
 			$names .= $faker->name . '<br>';
 		}
 	}

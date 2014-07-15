@@ -40,6 +40,12 @@
 						<div class = "col-md-3">
 							<input class = "form-control" type = "text" id = "users" name = "users" maxlength = 1 value = ''>
 						</div>
+					<label for = "birth"> Include birthdays: 
+						<input type = "checkbox"  id = "birth" name = "birth">
+					</label>
+					<label for = "address"> Include address: 
+						<input type = "checkbox" id = "address" name = "address">
+					</label>
 				</div>
 				<button type = "submit" class = "btn btn-default"> Get some users! </button>
 			</form>
