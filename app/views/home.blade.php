@@ -13,7 +13,7 @@
 
 		<p>A variation of the ordinary lorem ipsum text has been used in typesetting since the 1960s or earlier, when it was popularized by advertisements for Letraset transfer sheets. It was introduced to the Information Age in the mid-1980s by Aldus Corporation, which employed it in graphics and word processing templates for its desktop publishing program, PageMaker, for the Apple Macintosh.</p>
 
-		<p><small> Taken from <a href="https://en.wikipedia.org/w/index.php?title=Lorem_ipsum&oldid=615803343"> Wikipedia </a></small></p>
+		<p><small> Taken from <a href="https://en.wikipedia.org/w/index.php?title=Lorem_ipsum&amp;oldid=615803343"> Wikipedia </a></small></p>
 	</div>
 </div>
 @stop
